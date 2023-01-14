@@ -144,7 +144,7 @@ jobs:
       uses: softprops/action-gh-release@master
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
       with:
         name: ${{ env.OPNAME }}
         tag_name: ${{ steps.tag.outputs.release_tag }}
